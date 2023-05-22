@@ -37,7 +37,7 @@ def location_rent(request, name):
     for row in result:
         if row.value is not None:
             response = JsonResponse({'content': row.value})
-    response["Access-Control-Allow-Origin"] = 'http://localhost:3000'
+    response["Access-Control-Allow-Origin"] = 'http://172.26.134.0:3000'
     return response
 
 
@@ -50,7 +50,7 @@ def location_income(request, name):
     for row in result:
         if row.value is not None:
             response = JsonResponse({'content': row.value})
-    response["Access-Control-Allow-Origin"] = 'http://localhost:3000'
+    response["Access-Control-Allow-Origin"] = 'http://172.26.134.0:3000'
     return response
 
 
@@ -63,7 +63,7 @@ def location_deposit(request, name):
     for row in result:
         if row.value is not None:
             response = JsonResponse({'content': row.value})
-    response["Access-Control-Allow-Origin"] = 'http://localhost:3000'
+    response["Access-Control-Allow-Origin"] = 'http://172.26.134.0:3000'
     return response
 
 
@@ -76,7 +76,7 @@ def location_unemploy(request, name):
     for row in result:
         if row.value is not None:
             response = JsonResponse({'content': row.value})
-    response["Access-Control-Allow-Origin"] = 'http://localhost:3000'
+    response["Access-Control-Allow-Origin"] = 'http://172.26.134.0:3000'
     return response
 
 
@@ -94,7 +94,7 @@ def location_sentiment(request, name):
             else:
                 response = JsonResponse({'content': row.value.get[name]})
             break
-    response["Access-Control-Allow-Origin"] = 'http://localhost:3000'
+    response["Access-Control-Allow-Origin"] = 'http://172.26.134.0:3000'
     return response
 
 
@@ -108,7 +108,7 @@ def num_tweet_per_month(request):
         if row.key is not None:
             result_dict['-'.join(str(part) for part in row.key)] = row.value
     response = JsonResponse({'content': result_dict})
-    response["Access-Control-Allow-Origin"] = 'http://localhost:3000'
+    response["Access-Control-Allow-Origin"] = 'http://172.26.134.0:3000'
     return response
 
 
@@ -125,7 +125,7 @@ def mastodon_lda(request):
     preprocessed_documents = [preprocess_text(doc) for doc in result_list]
     lda_topics = LDA_100(preprocessed_documents)
     response = JsonResponse({'content': lda_topics})
-    response["Access-Control-Allow-Origin"] = 'http://localhost:3000'
+    response["Access-Control-Allow-Origin"] = 'http://172.26.134.0:3000'
     return response
 
 
@@ -138,7 +138,7 @@ def state_rent(request, name):
     for row in result:
         if row.value is not None:
             response = JsonResponse({'content': row.value})
-    response["Access-Control-Allow-Origin"] = 'http://localhost:3000'
+    response["Access-Control-Allow-Origin"] = 'http://172.26.134.0:3000'
     return response
 
 
@@ -151,7 +151,7 @@ def state_income(request, name):
     for row in result:
         if row.value is not None:
             response = JsonResponse({'content': row.value})
-    response["Access-Control-Allow-Origin"] = 'http://localhost:3000'
+    response["Access-Control-Allow-Origin"] = 'http://172.26.134.0:3000'
     return response
 
 
@@ -164,7 +164,7 @@ def state_deposit(request, name):
     for row in result:
         if row.value is not None:
             response = JsonResponse({'content': row.value})
-    response["Access-Control-Allow-Origin"] = 'http://localhost:3000'
+    response["Access-Control-Allow-Origin"] = 'http://172.26.134.0:3000'
     return response
 
 
@@ -177,7 +177,7 @@ def state_unemploy(request, name):
     for row in result:
         if row.value is not None:
             response = JsonResponse({'content': row.value})
-    response["Access-Control-Allow-Origin"] = 'http://localhost:3000'
+    response["Access-Control-Allow-Origin"] = 'http://172.26.134.0:3000'
     return response
 
 
@@ -196,7 +196,7 @@ def mastodon_sentiment(request):
             else:
                 count_dict["neutral"] += 1
     response = JsonResponse({'content': count_dict})
-    response["Access-Control-Allow-Origin"] = 'http://localhost:3000'
+    response["Access-Control-Allow-Origin"] = 'http://172.26.134.0:3000'
     return response
 
 
@@ -209,7 +209,7 @@ def twitter_sentiment(request, name):
     for row in result:
         if row.value is not None:
             response = JsonResponse({'content': row.value})
-    response["Access-Control-Allow-Origin"] = 'http://localhost:3000'
+    response["Access-Control-Allow-Origin"] = 'http://172.26.134.0:3000'
     return response
 
 
@@ -241,5 +241,5 @@ def twitter_created_time(request, name):
     for row in result:
         if row.value is not None:
             response = JsonResponse({'content': row.value})
-    response["Access-Control-Allow-Origin"] = 'http://localhost:3000'
+    response["Access-Control-Allow-Origin"] = 'http://172.26.134.0:3000'
     return response
